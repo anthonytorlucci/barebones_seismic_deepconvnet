@@ -65,7 +65,7 @@ model.eval()
 
 numpy_data = numpy.load("data/3D_gathers_pstm_reformat_ieee_little_endian_full_fold_inline_1360_1400.npy")
 # TRIM SAMPLES FOR FASTER DISPLAY
-numpy_data = numpy_data[:,:501]
+numpy_data = numpy_data[:,:1001]
 input_ensemble = torch.tensor(numpy_data, device='cpu')
 print(input_ensemble.size())
 output_ensemble = apply_dcn_to_gather(dcn_model=model, ensemble_data=input_ensemble, nn_patch_size=PATCH_SIZE)
